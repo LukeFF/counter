@@ -10,26 +10,26 @@ let count = 0;
 let $ipsConnected = [];
 
 io.on('connection', function (socket) {
-  const $ipAddress = socket.handshake.address;
+  //const $ipAddress = socket.handshake.address;
 
-  if (!$ipsConnected.hasOwnProperty($ipAddress)) {
-    $ipsConnected[$ipAddress] = 1;
+  //if (!$ipsConnected.hasOwnProperty($ipAddress)) {
+    //$ipsConnected[$ipAddress] = 1;
     count++;
 
-    socket.emit('counter', {
+    /*socket.emit('counter', {
       count: count
-    });
-  }
+    });*/
+  //}
 
   socket.on('disconnect', function () {
-    if ($ipsConnected.hasOwnProperty($ipAddress)) {
-      delete $ipsConnected[$ipAddress];
+    //if ($ipsConnected.hasOwnProperty($ipAddress)) {
+      //delete $ipsConnected[$ipAddress];
       count--;
 
-      socket.emit('counter', {
+      /*socket.emit('counter', {
         count: count
       });
-    }
+    }*/
   });
 });
 
